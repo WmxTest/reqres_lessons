@@ -15,8 +15,4 @@ public class UserService extends BaseRestService {
                 .statusCode(200)
                 .extract().as(User.class);
     }
-
-    public static void main(String[] args) {
-        System.out.println(getSingleUser(7));
-    }
 }
