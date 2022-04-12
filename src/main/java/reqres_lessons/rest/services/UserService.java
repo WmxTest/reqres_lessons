@@ -9,9 +9,14 @@ public class UserService extends BaseRestService {
     public static User getSingleUser(int userId) {
         return given()
                 .spec(requestSpecification)
+                .when()
                 .get("/api/users/" + userId)
                 .then()
                 .statusCode(200)
                 .extract().as(User.class);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(getSingleUser(7));
     }
 }
